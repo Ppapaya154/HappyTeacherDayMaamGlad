@@ -1,0 +1,251 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Belated Happy Teachers' Day</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&family=Special+Elite&display=swap">
+<style>
+/* Layout: one sheet of lined pad paper on a desk, written in blue ballpen, stamped BELATED and graded in red pen, with the stik o resting below it */
+:root {
+  --desk: #d8e1db;
+  --desk-deep: #c3cfc7;
+  --paper: #fffdf5;
+  --rule: #b7d3ea;
+  --margin: #e8776f;
+  --ink: #1b3a8c;
+  --pen-red: #c4263a;
+  --hilite: #ffe35c;
+  --tape: #f1d78a;
+  --tape-ink: #4a3a0a;
+  --font-hand: 'Kalam', 'Segoe Print', 'Bradley Hand', cursive;
+  --font-display: 'Caveat', 'Segoe Script', 'Brush Script MT', cursive;
+  --font-type: 'Special Elite', 'Courier New', monospace;
+  --lh: 2.15rem;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--font-hand);
+  padding-block: 1.5rem 3rem;
+  padding-inline: 1rem;
+}
+
+.desk {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+/* The sheet: every line of text sits on a ruled line, 1 line = var(--lh) */
+.sheet {
+  position: relative;
+  padding: var(--lh) 1.1rem var(--lh) 3.1rem;
+  background-color: var(--paper);
+  background-image: linear-gradient(to bottom, transparent calc(var(--lh) - 1px), var(--rule) calc(var(--lh) - 1px));
+  background-size: 100% var(--lh);
+  background-position: 0 -0.5rem;
+  border-radius: 3px;
+  box-shadow: 0 10px 24px -8px rgba(30, 50, 40, 0.35), 0 2px 4px rgba(30, 50, 40, 0.15);
+}
+
+.sheet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.2rem;
+  width: 5px;
+  border-left: 1.5px solid var(--margin);
+  border-right: 1.5px solid var(--margin);
+}
+
+.holes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.holes i {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--desk-deep);
+  box-shadow: inset 0 1px 3px rgba(30, 50, 40, 0.35);
+}
+
+h1 {
+  margin: 0 0 var(--lh);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 12vw, 3.6rem);
+  line-height: calc(var(--lh) * 2);
+}
+
+h1 span { display: block; }
+
+.stamp {
+  --rot: -9deg;
+  position: absolute;
+  top: 1.4rem;
+  right: 1rem;
+  padding: 0.2rem 0.7rem;
+  border: 3px double var(--pen-red);
+  color: var(--pen-red);
+  font-family: var(--font-type);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transform: rotate(var(--rot));
+  animation: thump 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+.letter p {
+  margin: 0 0 var(--lh);
+  font-size: 1.15rem;
+  line-height: var(--lh);
+  overflow-wrap: anywhere;
+}
+
+mark {
+  color: inherit;
+  font-weight: 700;
+  background-color: transparent;
+  background-image: linear-gradient(transparent 10%, var(--hilite) 10%, var(--hilite) 94%, transparent 94%);
+  padding-inline: 0.2em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.signoff {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  min-height: calc(var(--lh) * 4);
+}
+
+.letter .sig {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: calc(var(--lh) * 2);
+}
+
+.grade {
+  --rot: -7deg;
+  padding: 0.3rem 1rem 0.45rem;
+  border: 3px solid var(--pen-red);
+  border-radius: 54% 46% 52% 48% / 50% 56% 44% 50%;
+  color: var(--pen-red);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 3.6rem;
+  line-height: 1;
+  transform: rotate(var(--rot));
+  animation: thump 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+@keyframes thump {
+  from { transform: rotate(var(--rot)) scale(1.7); }
+  to { transform: rotate(var(--rot)) scale(1); }
+}
+
+/* The gift resting on the desk */
+.gift {
+  margin: 2.25rem 0 0;
+  text-align: center;
+}
+
+.gift svg {
+  display: block;
+  margin-inline: auto;
+  width: min(100%, 20rem);
+  height: auto;
+}
+
+.tape {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.35rem 1.1rem;
+  background: var(--tape);
+  color: var(--tape-ink);
+  font-family: var(--font-type);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  transform: rotate(-2deg);
+  box-shadow: 0 2px 4px rgba(30, 50, 40, 0.2);
+}
+
+@media (min-width: 40rem) {
+  .sheet { padding-left: 4.2rem; padding-right: 2.2rem; }
+  .sheet::before { left: 3.1rem; }
+  .holes { left: 1.1rem; }
+  .letter p { font-size: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp, .grade { animation: none; }
+}
+</style>
+
+<main class="desk">
+  <article class="sheet">
+    <div class="holes" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="stamp">Belated</p>
+
+    <h1><span>Happy</span><span>Teachers&rsquo; Day</span></h1>
+
+    <div class="letter">
+      <p>Hello maam, diko kaybaw mo himo ug website so ako rani gi Claude hahahaha.</p>
+
+      <p>So anyways, kani nga gift maam is late na, pero mahadlok man ko mahagbong sakong major maam. Mao tong hatagan tikag stik o para basin mausab akong hagbongon, charizz. Enjoy the stik o, maam.</p>
+
+      <p>And also, naa koy quote, pero basin makahilak ko bah. Pero ayawg hilak ha. Ang quote nako kay <mark>&ldquo;Lami ang stik o, dako ang score ko&rdquo;</mark> HAHAHAHAHA</p>
+
+      <p>Pero in all seriousness maam, kan-a lang na ang stik o and enjoy, becoz <mark>nobody is asking you to figure things out all at once. Just open the stik o and soloha ug kaon, ayaw panghatag, be selfish because you&rsquo;ve given enough of yourself.</mark> And lastly ayaw ko hagbonga maam kay sumbagay jud ta &#x1F606;</p>
+
+      <p>Happy belated Teachers&rsquo; Day, maam!</p>
+
+      <div class="signoff">
+        <p class="sig">Austin</p>
+        <div class="grade" role="img" aria-label="Score: 100">100</div>
+      </div>
+    </div>
+  </article>
+
+  <figure class="gift">
+    <svg viewBox="0 0 320 170" width="320" height="170" role="img" aria-label="Three wafer sticks held together with a strip of tape">
+      <defs>
+        <pattern id="wafer" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+          <rect width="9" height="9" fill="#ecc886"/>
+          <rect width="3" height="9" fill="#d6a45a"/>
+        </pattern>
+      </defs>
+      <g transform="translate(160 86)">
+        <g transform="translate(0 -20) rotate(-13)">
+          <rect x="-118" y="-14" width="236" height="28" rx="14" fill="url(#wafer)" stroke="#a36f2c" stroke-width="2"/>
+          <ellipse cx="108" cy="0" rx="5" ry="10" fill="#4a2a1b"/>
+        </g>
+        <g transform="translate(0 2) rotate(-1)">
+          <rect x="-118" y="-14" width="236" height="28" rx="14" fill="url(#wafer)" stroke="#a36f2c" stroke-width="2"/>
+          <ellipse cx="-108" cy="0" rx="5" ry="10" fill="#4a2a1b"/>
+        </g>
+        <g transform="translate(0 22) rotate(11)">
+          <rect x="-118" y="-14" width="236" height="28" rx="14" fill="url(#wafer)" stroke="#a36f2c" stroke-width="2"/>
+          <ellipse cx="108" cy="0" rx="5" ry="10" fill="#4a2a1b"/>
+        </g>
+        <rect x="-17" y="-58" width="34" height="116" rx="2" fill="#f1d78a" fill-opacity="0.92" stroke="#d3b45a" stroke-width="1.5" transform="rotate(-5)"/>
+      </g>
+    </svg>
+    <figcaption class="tape">for maam</figcaption>
+  </figure>
+</main>
+
+</body></html>
